@@ -15,7 +15,6 @@ getTiles :: Patch -> [(Int, Int)]
 getTiles (Patch {offsets =  (offsetX, offsetY), dims =  (width, height)}) =
    [(offsetX + x, offsetY + y) | x <- [0 .. width - 1], y <- [0 .. height - 1]]
 
-
 addPatch :: Patch -> Fabric -> Fabric
 addPatch patch fabric=
   let updatedPatches = fabric {patches = patch : (patches fabric)}
